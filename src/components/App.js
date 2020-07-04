@@ -1,15 +1,20 @@
-import React from 'react'
+import React from 'react';
+import InputTask from './InputTask';
 
 class App extends React.Component {
-    constructor() {
-        super()
+    state = {
+        tasks: []
+    }
+
+    onSubmit = (task) => {
+        this.setState({ taskInput: this.state.tasks.push(task) });
     }
 
     render() {
         return (
-            <div>Hello React</div>
+            <InputTask onSubmit={this.onSubmit} />
         )
     }
 }
 
-export default App
+export default App;
