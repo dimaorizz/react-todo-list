@@ -1,5 +1,6 @@
 import React from 'react';
 import InputTask from './InputTask';
+import TaskList from './TaskList';
 
 class App extends React.Component {
     state = {
@@ -12,7 +13,10 @@ class App extends React.Component {
 
     render() {
         return (
-            <InputTask onSubmit={this.onSubmit} />
+            <div>
+                <InputTask onSubmit={this.onSubmit} />
+                <TaskList tasks={this.state.tasks} />
+            </div>
         )
     }
 }
